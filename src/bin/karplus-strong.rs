@@ -8,7 +8,7 @@ const F0: f64 = 440.0;
 const T: f64 = 1.0 / F0;
 const DECAY: f64 = 8.0;
 
-struct ADSR {
+struct Adsr {
     attack: usize,
     delay: usize,
     sustain: f64,
@@ -16,7 +16,7 @@ struct ADSR {
     duration: usize,
 }
 
-impl ADSR {
+impl Adsr {
     fn value(&self, i: usize) -> f64 {
         match i {
             i if i < self.attack => i as f64 / self.attack as f64,
@@ -79,7 +79,7 @@ fn main() {
         */
     }
 
-    let adsr = ADSR {
+    let adsr = Adsr {
         attack: 0,
         delay: 0,
         sustain: 1.0,
